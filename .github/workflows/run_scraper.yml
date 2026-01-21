@@ -1,0 +1,56 @@
+name: Monthly Google Maps Scraper
+
+on:
+  schedule:
+    # Run at 02:00 UTC on the 1st of every month
+    - cron: "0 2 1 * *"
+
+  workflow_dispatch:
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+
+    steps:
+      - name: 📥 Checkout repository
+        uses: actions/checkout@v4
+
+      - name: 🐍 Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: 📦 Install system dependencies (Playwright)
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y \
+            libnss3 \
+            libatk-bridge2.0-0 \
+            libgtk-3-0 \
+            libxss1 \
+            libasound2t64 \
+            libgbm1 \
+            libdrm2 \
+            libxkbcommon0
+
+      - name: 📦 Install Python dependencies
+        run: |
+          pip install --upgrade pip
+          pip install \
+            playwright \
+            python-dotenv \
+            gspread \
+            google-auth
+
+      - name: 🌐 Install Playwright Chromium
+        run: |
+          playwright install chromium
+
+      - name: 🚀 Run scraper
+        env:
+          GOOGLE_SHEET_ID: ${{ secrets.GOOGLE_SHEET_ID }}
+          GOOGLE_SHEET_NAME: ${{ secrets.GOOGLE_SHEET_NAME }}
+          GOOGLE_CREDENTIALS_JSON: ${{ secrets.GOOGLE_CREDENTIALS_JSON }}
+        run: |
+          python scraper.py
