@@ -19,11 +19,11 @@ GOOGLE_SHEET_NAME = os.getenv("GOOGLE_SHEET_NAME", "Sheet1")
 # CONFIG
 # -------------------------------------------------
 BUSINESS_QUERIES = [
-    "Biodiversity Net Gain Survey Service in",
-    "Biodiversity Consulting Service in",
-    "Ecological Survey Service in",
-    "Biodiversity Implementation Service in",
-    "BNG Assessment Service in",
+    "Line Marking Service in",
+    "Road Line Marking Service in",
+    "Car Park Line Marking Service in",
+    "Line Marking Repair Service in",
+    "Line Marking Reinstatement Service in",
 ]
 
 MAX_SCROLLS = 50
