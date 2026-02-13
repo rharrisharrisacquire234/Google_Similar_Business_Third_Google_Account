@@ -97,7 +97,7 @@ def get_existing_websites(sheet):
 # SCRAPE
 # -------------------------------------------------
 async def scrape_city(page, city, business_query):
-    query = f"{business_query} {city}"
+    query = f"{business_query} {city} United Kingdom"
     print(f"\n🔍 {business_query} | 🌆 {city}", flush=True)
 
     await page.goto(
