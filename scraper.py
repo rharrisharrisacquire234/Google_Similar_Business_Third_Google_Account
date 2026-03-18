@@ -19,10 +19,10 @@ GOOGLE_SHEET_NAME = os.getenv("GOOGLE_SHEET_NAME", "Sheet1")
 # CONFIG
 # -------------------------------------------------
 BUSINESS_QUERIES = [
-    "Mechanical and Electrical Services in",
-    "M&E Contractor in",
-    "Mechanical Contractor in",
-    "Electrical Contractor in",
+    "Building Services Engineering in",
+    "HVAC Installation Service in",
+    "HVAC Maintenance Service in",
+    "Electrical Installation Service in",
 ]
 
 MAX_SCROLLS = 20
