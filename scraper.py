@@ -25,7 +25,7 @@ BUSINESS_QUERIES = [
     "Electrical Contractor in",
 ]
 
-MAX_SCROLLS = 50
+MAX_SCROLLS = 20
 
 CITIES = [
     "Bath", "Birmingham", "Bradford", "Brighton and Hove", "Bristol",
