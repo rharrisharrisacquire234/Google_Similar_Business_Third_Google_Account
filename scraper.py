@@ -19,11 +19,11 @@ GOOGLE_SHEET_NAME = os.getenv("GOOGLE_SHEET_NAME", "Sheet1")
 # CONFIG
 # -------------------------------------------------
 BUSINESS_QUERIES = [
-    "Palisade Fencing Contractor in",
-    "Mesh Fencing Contractor in",
-    "Acoustic Fencing Contractor in",
-    "School Fencing Contractor in",
-    "Sports Fencing Contractor in",
+    "Automated Barrier Installation Service in",
+    "Vehicle Access Control Service in",
+    "Security Gate System Installer in",
+    "Entry Control System Installer in",
+    "Intercom System Installer in",
 ]
 
 MAX_SCROLLS = 20
